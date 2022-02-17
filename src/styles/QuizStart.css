@@ -1,1 +1,25 @@
+.start-container {
+  text-align: center;
+}
 
+button {
+  background-color: #e7f3ff;
+  color: #18a0f7;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border: none;
+  /* padding: 1rem 1.5rem; */
+  width: 7rem;
+  height: 3rem;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.start-container ul {
+  list-style: none;
+}
+
+.start-container ul li {
+  font-size: 1rem;
+}

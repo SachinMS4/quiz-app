@@ -1,4 +1,4 @@
-export const items = [
+export const data = [
   {
     question: "India is {} largest country by population",
     type: "FITB1",
