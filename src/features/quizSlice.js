@@ -2,8 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 import { data } from "../assets/data";
 
 const initialState = {
-  value: data,
+  value: data.map((item, i) => {
+    return { id: i, ...item, userAnswer: [] };
+  }),
 };
+
+console.log(initialState.value);
 
 const quizSlice = createSlice({
   name: "questions",
