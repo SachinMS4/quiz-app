@@ -1,0 +1,33 @@
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1rem;
+  justify-content: space-between;
+}
+
+.option0 {
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.option5 {
+  padding: 0.5rem 1rem;
+  background-color: #f5eedc;
+}
+.option4 {
+  padding: 0.5rem 1rem;
+  background-color: #ecb390;
+}
+.option3 {
+  padding: 0.5rem 1rem;
+  background-color: #c0d8c0;
+}
+.option2 {
+  padding: 0.5rem 1rem;
+  background-color: #dd4a48;
+}
+.option1 {
+  padding: 0.5rem 1rem;
+  background-color: #74992e;
+}

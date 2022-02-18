@@ -1,0 +1,24 @@
+header {
+  width: 100%;
+  height: 4rem;
+  background-color: #ffffff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 5px 25px rgb(0 0 0 / 0.1);
+  color: #dd4a48;
+}
+
+h1,
+.header-button {
+  margin: 0 2rem;
+}
+
+.header-button {
+  width: 5rem;
+  height: 3rem;
+  font-size: 1rem;
+  color: white;
+  background-color: red;
+}
