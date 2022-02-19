@@ -1,10 +1,11 @@
-Steps to run the project on your local machine.
+1. Steps to run the project on your local machine.
 
-Download the code on to your local machine.
+2. Download the code on to your local machine.
 
-Navigate to project folder (./quiz-app).
+3. Navigate to project folder (./quiz-app).
 
-Open terminal on the project location (./quiz-app).
-Run **#npm install** to install the rquired npm modules and packages.
+4. Open terminal on the project location (./quiz-app).
 
-Run **#npm start** to start the project on local host.
+5. Run **#npm install** to install the rquired npm modules and packages.
+
+6. Run **#npm start** to start the project on local host.
