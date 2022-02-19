@@ -25,7 +25,7 @@ function Timer() {
     return () => {
       clearInterval(myInterval);
     };
-  }, [seconds]);
+  });
   return (
     <div>
       {minutes === 0 && seconds === 0 ? null : (

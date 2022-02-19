@@ -27,7 +27,7 @@ function MTQ({ options, queTitle, id }) {
     setAnswer([]);
   };
 
-  useEffect(() => dispatch(userAnswers({ id, userAnswer: answer })), [answer]);
+  useEffect(() => dispatch(userAnswers({ id, userAnswer: answer })));
 
   return (
     <div>

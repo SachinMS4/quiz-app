@@ -1,6 +1,6 @@
-import React, { useRef, useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { changeNav, setShowTimer } from "../features/navigationSlice";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { changeNav } from "../features/navigationSlice";
 import "../styles/header.css";
 import Timer from "./Timer";
 

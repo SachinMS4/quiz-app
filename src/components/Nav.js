@@ -7,7 +7,6 @@ import QuizEnd from "./QuizEnd";
 import { useSelector } from "react-redux";
 
 function Nav() {
-  const [startQuiz, setStartQuiz] = useState(true);
   const { startPage, endPage, quesPage } = useSelector(
     (state) => state.nav.value
   );

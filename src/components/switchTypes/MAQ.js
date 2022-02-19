@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { userAnswers } from "../../features/quizSlice";
 
 function MAQ({ choices, queTitle, id }) {
@@ -23,7 +23,7 @@ function MAQ({ choices, queTitle, id }) {
       setAns(curAns);
     }
   };
-  useEffect(() => dispatch(userAnswers({ id, userAnswer: ans })), [ans]);
+  useEffect(() => dispatch(userAnswers({ id, userAnswer: ans })));
 
   return (
     <div>
