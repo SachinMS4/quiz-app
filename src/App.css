@@ -16,6 +16,7 @@ header {
 
 .app-container {
   max-height: 500px;
+  min-height: 350px;
   overflow: auto;
   position: absolute;
   top: 50%;

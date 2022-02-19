@@ -1,6 +1,5 @@
 header {
   width: 100%;
-  height: 4rem;
   background-color: #ffffff;
   color: #000;
   display: flex;
@@ -10,13 +9,14 @@ header {
   color: #dd4a48;
 }
 
-h1,
-.header-button {
-  margin: 0 2rem;
+h1 {
+  margin-left: 1rem;
+  font-size: 2rem;
 }
 
 .header-button {
-  width: 5rem;
+  margin: 1rem;
+  width: 6rem;
   height: 3rem;
   font-size: 1rem;
   color: white;
