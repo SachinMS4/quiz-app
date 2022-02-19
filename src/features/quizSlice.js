@@ -7,8 +7,6 @@ const initialState = {
   }),
 };
 
-console.log(initialState.value);
-
 const quizSlice = createSlice({
   name: "questions",
   initialState,
@@ -16,12 +14,15 @@ const quizSlice = createSlice({
     getQuestions: (state) => {
       state = "hello";
     },
-    userAnswer: (state, action) => {
-      state = action.payload;
+    userAnswers: (state, action) => {
+      const index = action.payload.id;
+      const [item] = state.value.filter((que) => que.id === index);
+      state.value[index].userAnswer = action.payload.userAnswer;
+      console.log(action.payload);
     },
   },
 });
 
-export const { getQuestions } = quizSlice.actions;
+export const { userAnswers } = quizSlice.actions;
 
 export default quizSlice.reducer;
