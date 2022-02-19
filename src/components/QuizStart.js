@@ -7,22 +7,15 @@ import { useSelector } from "react-redux";
 function QuizStart({ setStartQuiz, setDisQue }) {
   const data = useSelector((state) => state.quiz.value);
   const totalTime = data.reduce((prev, item) => prev + item.time, 0);
-  console.log(totalTime);
 
   return (
     <div className="start-container">
       <h2>Your are about to start Quiz</h2>
-      <ul>
-        <li>Number of questions {data.length}</li>
-        <li>Total time {totalTime} minutes</li>
-      </ul>
-      <button
-        onClick={() => {
-          setDisQue(true);
-          setStartQuiz(false);
-        }}>
-        Start Quiz
-      </button>
+
+      <h4>Number of questions : {data.length}</h4>
+      <h4>Total time : {totalTime} minutes</h4>
+
+      <h3>Click on above Start button to begin.</h3>
     </div>
   );
 }

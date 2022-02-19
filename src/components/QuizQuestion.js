@@ -19,13 +19,25 @@ function QuizQuestion({ setCurQue, setDisQue, setQuizEnded, curQue }) {
   function renderSwitch(type = "MSQ") {
     switch (type) {
       case "FITB1":
-        return <FITB1 queTitle={queTitle} />;
+        return <FITB1 queTitle={queTitle} id={question.id} />;
       case "FITB2":
-        return <FITB2 queTitle={queTitle} />;
+        return <FITB2 queTitle={queTitle} id={question.id} />;
       case "MAQ":
-        return <MAQ queTitle={queTitle} choices={question.answer_choices} />;
+        return (
+          <MAQ
+            queTitle={queTitle}
+            choices={question.answer_choices}
+            id={question.id}
+          />
+        );
       case "MCQ":
-        return <MCQ queTitle={queTitle} choices={question.answer_choices} />;
+        return (
+          <MCQ
+            queTitle={queTitle}
+            choices={question.answer_choices}
+            id={question.id}
+          />
+        );
       case "MTF":
         return (
           <MTF
@@ -43,31 +55,18 @@ function QuizQuestion({ setCurQue, setDisQue, setQuizEnded, curQue }) {
     }
   }
 
-  console.log(question.type);
   return (
     <div className="question-container">
       {renderSwitch(question.type)}
 
       <div className="buttons">
-        <button
-          onClick={() =>
-            setCurQue(curQue !== 0 ? curQue - 1 : questions.length - 1)
-          }>
-          Previous
-        </button>
+        {curQue !== 0 ? (
+          <button onClick={() => setCurQue(curQue - 1)}>Previous</button>
+        ) : null}
 
         {curQue !== questions.length - 1 ? (
           <button onClick={() => setCurQue(curQue + 1)}>Next</button>
-        ) : (
-          <button
-            style={{ color: "green" }}
-            onClick={() => {
-              setQuizEnded(true);
-              setDisQue(false);
-            }}>
-            Submit
-          </button>
-        )}
+        ) : null}
       </div>
     </div>
   );

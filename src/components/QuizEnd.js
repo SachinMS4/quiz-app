@@ -1,18 +1,19 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 
-function QuizEnd({ setQuizEnded, setStartQuiz, setCurQue }) {
+function QuizEnd({ setCurQue }) {
   return (
     <div>
       <h1>Thank You!</h1>
       <h3>You have successfully submitted the quiz.</h3>
-      <button
+      {/* <button
         onClick={() => {
           setQuizEnded(false);
           setStartQuiz(true);
           setCurQue(0);
         }}>
         Retry
-      </button>
+      </button> */}
     </div>
   );
 }
