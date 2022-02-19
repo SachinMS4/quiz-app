@@ -1,38 +1,52 @@
 import React, { useRef, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { changeNav, setShowTimer } from "../features/navigationSlice";
 import "../styles/header.css";
+import Timer from "./Timer";
 
 const Header = () => {
-  const [minutes, setMinutes] = useState(10);
-  const [seconds, setSeconds] = useState(50);
+  const [disTimer, setDisTimer] = useState(false);
+  const [buttonName, setbuttonName] = useState("Start");
+
+  const dispatch = useDispatch();
+
+  function clickHandler() {
+    let name = "";
+    if (buttonName === "Start") {
+      name = "Submit";
+      setDisTimer(true);
+    } else if (buttonName === "Submit") {
+      name = "Retry";
+      setDisTimer(false);
+    } else {
+      name = "Start";
+      setDisTimer(false);
+    }
+    setbuttonName(name);
+  }
   useEffect(() => {
-    let myInterval = setInterval(() => {
-      if (seconds > 0) {
-        setSeconds(seconds - 1);
-      }
-      if (seconds === 0) {
-        if (minutes === 0) {
-          clearInterval(myInterval);
-        } else {
-          setMinutes(minutes - 1);
-          setSeconds(59);
-        }
-      }
-    }, 1000);
-    return () => {
-      clearInterval(myInterval);
-    };
+    if (buttonName === "Submit") {
+      return dispatch(
+        changeNav({ startPage: false, endPage: false, quesPage: true })
+      );
+    } else if (buttonName === "Start") {
+      return dispatch(
+        changeNav({ startPage: true, endPage: false, quesPage: false })
+      );
+    } else {
+      return dispatch(
+        changeNav({ startPage: false, endPage: true, quesPage: false })
+      );
+    }
   });
 
   return (
     <header>
       <h1>Quiz App</h1>
-      {minutes === 0 && seconds === 0 ? null : (
-        <h1>
-          {" "}
-          {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
-        </h1>
-      )}
-      <button className="header-button">Start</button>
+      {disTimer ? <Timer /> : null}
+      <button className="header-button" onClick={clickHandler}>
+        {buttonName}
+      </button>
     </header>
   );
 };
