@@ -1,16 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { userAnswers } from "../../features/quizSlice";
 
 import "../../styles/MTQ.css";
 
 function MTQ({ options, queTitle, id }) {
   const [selected, setSelected] = useState(Array(options.length).fill(0));
   const [optionCount, setOptionCount] = useState(0);
+  const [answer, setAnswer] = useState([]);
+
+  const dispatch = useDispatch();
 
   const handleClick = (selection) => {
     let item = [...selected];
     if (item[selection] === 0) {
       item[selection] = optionCount;
       setOptionCount(optionCount + 1);
+      setAnswer([...answer, options[selection].Capital]);
     }
     setSelected(item);
   };
@@ -18,7 +24,10 @@ function MTQ({ options, queTitle, id }) {
   const resetHandler = () => {
     setSelected(selected.fill(0));
     setOptionCount(1);
+    setAnswer([]);
   };
+
+  useEffect(() => dispatch(userAnswers({ id, userAnswer: answer })), [answer]);
 
   return (
     <div>
