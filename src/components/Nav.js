@@ -4,35 +4,22 @@ import { useState } from "react";
 import QuizStart from "./QuizStart";
 import QuizQuestion from "./QuizQuestion";
 import QuizEnd from "./QuizEnd";
+import { useSelector } from "react-redux";
 
 function Nav() {
   const [startQuiz, setStartQuiz] = useState(true);
-  const [quizEnded, setQuizEnded] = useState(false);
-  const [disQue, setDisQue] = useState(false); //Display Question
+  const { startPage, endPage, quesPage } = useSelector(
+    (state) => state.nav.value
+  );
   const [curQue, setCurQue] = useState(0);
 
   return (
     <div>
-      {startQuiz && !disQue ? (
-        <QuizStart setStartQuiz={setStartQuiz} setDisQue={setDisQue} />
-      ) : null}
+      {startPage ? <QuizStart /> : null}
 
-      {disQue ? (
-        <QuizQuestion
-          setQuizEnded={setQuizEnded}
-          setCurQue={setCurQue}
-          curQue={curQue}
-          setDisQue={setDisQue}
-        />
-      ) : null}
+      {quesPage ? <QuizQuestion curQue={curQue} setCurQue={setCurQue} /> : null}
 
-      {quizEnded ? (
-        <QuizEnd
-          setQuizEnded={setQuizEnded}
-          setStartQuiz={setStartQuiz}
-          setCurQue={setCurQue}
-        />
-      ) : null}
+      {endPage ? <QuizEnd setCurQue={setCurQue} /> : null}
     </div>
   );
 }
