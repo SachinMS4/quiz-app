@@ -8,9 +8,13 @@ import MAQ from "./switchTypes/MAQ";
 import MCQ from "./switchTypes/MCQ";
 import MTF from "./switchTypes/MTQ";
 
-function QuizQuestion({ setCurQue, setDisQue, setQuizEnded, curQue }) {
+function QuizQuestion({ setCurQue, curQue, endPage }) {
   const questions = useSelector((state) => state.quiz.value);
   const question = questions[curQue];
+
+  if (endPage) {
+    setCurQue(0);
+  }
 
   const queTitle = question.question.includes("{}")
     ? question.question.split("{}").join(" _______ ")

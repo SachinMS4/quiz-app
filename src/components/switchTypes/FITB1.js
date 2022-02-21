@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { userAnswers } from "../../features/quizSlice";
 
 function FITB1({ queTitle, id }) {
-  let answer = "";
+  const [answer, setAnswer] = useState("");
 
   const dispatch = useDispatch();
 
   function changeHandler(e) {
-    answer = e.target.value;
-    dispatch(userAnswers({ id, userAnswer: [answer] }));
+    setAnswer(e.target.value);
   }
+
+  useEffect(
+    () => dispatch(userAnswers({ id, userAnswer: [answer] })),
+    [answer, id, dispatch]
+  );
 
   return (
     <div>
