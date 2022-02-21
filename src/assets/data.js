@@ -3,21 +3,21 @@ export const data = [
     question: "India is {} largest country by population",
     type: "FITB1",
     time: 20,
-    answers: ["second"],
+    answer: ["second"],
   },
   {
     question:
       "India is {} largest country by population and ranks {} in terms of landmass",
     type: "FITB2",
     time: 20,
-    answers: ["second", "seventh"],
+    answer: ["second", "seventh"],
   },
   {
     question: "Select top two countries which has highest GDP",
     type: "MAQ",
     time: 20,
     answer_choices: ["USA", "China", "Japan", "Germany", "UK", "India"],
-    answers: ["USA", "China"],
+    answer: ["USA", "China"],
   },
   {
     question:
@@ -25,7 +25,7 @@ export const data = [
     type: "MCQ",
     time: 20,
     answer_choices: ["Tesla", "Apple", "Microsoft", "Netflix", "Google"],
-    answer: "Tesla",
+    answer: ["Tesla"],
   },
   {
     question: "Match the following captials with states",
@@ -38,5 +38,6 @@ export const data = [
       { State: "Himachal Pradesh", Capital: "Shimla" },
       { State: "Rajasthan", Capital: "Jaipur" },
     ],
+    answer: ["Mumbai", "Chandigarh", "Bengaluru", "Shimla", "Jaipur"],
   },
 ];
