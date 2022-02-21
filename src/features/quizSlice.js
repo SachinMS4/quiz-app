@@ -18,7 +18,6 @@ const quizSlice = createSlice({
       const index = action.payload.id;
       // const [item] = state.value.filter((que) => que.id === index);
       state.value[index].userAnswer = action.payload.userAnswer;
-      console.log(action.payload);
     },
   },
 });

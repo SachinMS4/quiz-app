@@ -5,7 +5,7 @@ import { userAnswers } from "../../features/quizSlice";
 function MCQ({ choices, queTitle, id }) {
   const dispatch = useDispatch();
   function changeHandler(e) {
-    const answer = e.target.value;
+    const answer = [e.target.value];
     dispatch(userAnswers({ id, userAnswer: answer }));
   }
 

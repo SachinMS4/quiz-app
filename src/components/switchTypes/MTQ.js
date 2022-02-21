@@ -11,7 +11,8 @@ function MTQ({ options, queTitle, id }) {
 
   const dispatch = useDispatch();
 
-  const handleClick = (selection) => {
+  const handleClick = (selection, e) => {
+    console.log(e);
     let item = [...selected];
     if (item[selection] === 0) {
       item[selection] = optionCount;
@@ -38,7 +39,7 @@ function MTQ({ options, queTitle, id }) {
             <p className={`option${i + 1}`}>{option.State} </p>
             <p
               className={`option${selected[i]} option0`}
-              onClick={() => handleClick(i)}>
+              onClick={(e) => handleClick(i, e)}>
               {option.Capital}
             </p>
           </div>

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 function Evaluate() {
   const data = useSelector((state) => state.quiz.value);
-  console.log(data);
+  console.log(data.map((item) => item.userAnswer));
 
   function arraysEqual(a, b) {
     if (a === b) return true;

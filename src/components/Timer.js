@@ -5,6 +5,9 @@ function Timer() {
   const data = useSelector((state) => state.quiz.value);
   const totalTime = data.reduce((prev, item) => prev + item.time, 0);
 
+  // const totalMinutes = Math.round(totalTime / 60);
+  // const totalSeconds = Math.round((totalTime / 60))
+
   const [minutes, setMinutes] = useState(totalTime - 1);
   const [seconds, setSeconds] = useState(59);
 
