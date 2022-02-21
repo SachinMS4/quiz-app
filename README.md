@@ -9,3 +9,6 @@
 5. Run **#npm install** to install the rquired npm modules and packages.
 
 6. Run **#npm start** to start the project on local host.
+
+    Live [here](https://upbeat-shannon-d4937f.netlify.app/).
+
